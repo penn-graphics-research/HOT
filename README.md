@@ -71,7 +71,15 @@ To test different setups, run commands with specific options. For example:
 ```
 ./multigrid -test 777011 --3d --usecn -cneps 1e-7 -lsolver 3 -Ainv 1 --project --linesearch --bcproject -mg_level 3 -mg_times 1 -coarseSolver 2 -smoother 5 --l2norm -o faceless_lbfgs
 ```
-Please see bash script *tog.sh* and README for more information.
+Here are some of the command options:
+- usecn: whether to use characteristic norm
+- cneps: epsilon of characteristic norm
+- lsolver: numerical method
+- coarseSolver: top level solver in multigrid
+- smoother: non-top level smoother in multigrid
+- ...
+
+Please see bash script *tog.sh* and *README* for more details.
 
 ## Bibtex
 

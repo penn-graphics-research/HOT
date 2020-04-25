@@ -23,7 +23,7 @@ if projecting system matrix according to boundary conditions
 same with smoother
 
 --usecn
-use characteristic norm (cn) tolerance
+if using characteristic norm (cn) tolerance
 
 -cneps
 epsilon for cn
@@ -43,3 +43,6 @@ jacobi preconditioner configuration, i.e. multiply the inverse of
 0: diagonal entry
 1: diagonal block (default)
 2: mass (only works without multigrid)
+
+--l2norm
+if using l2 norm (the alternative (deprecated) is infinite norm)
