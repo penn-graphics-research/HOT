@@ -1,0 +1,45 @@
+--matfree
+if matrix-free
+
+--project
+if projecting system matrix (dPdF) to positive definite
+
+--linesearch
+if using linesearch
+
+--bcproject
+if projecting system matrix according to boundary conditions
+
+-lsolver
+2: newton with CG
+3: LBFGS (only works with project & with-matrix)
+
+-smoother
+0: jacobi
+2: PCG
+5: symmetric GS
+
+-coarseSolver
+same with smoother
+
+--usecn
+use characteristic norm (cn) tolerance
+
+-cneps
+epsilon for cn
+
+-mg_level
+1: no multigrid
+>1: multigrid
+
+-mg_times
+smooth times per level
+
+-mg_scale (deprecated)
+actual smooth times per level (not coarsest level) = times + level * levelscale
+
+-Ainv
+jacobi preconditioner configuration, i.e. multiply the inverse of
+0: diagonal entry
+1: diagonal block (default)
+2: mass (only works without multigrid)
