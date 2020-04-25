@@ -2,10 +2,13 @@
 
 ## Description
 
-This is the opensource code for the paper:
+This is the opensource code for the ACM Transaction On Graphics (TOG) 2020 paper:
 
 **Hierarchical Optimization Time Integration for CFL-Rate MPM Stepping** (https://dl.acm.org/doi/10.1145/3386760)
 
+[PDF](https://www.seas.upenn.edu/~cffjiang/research/hot/wang2020hot.pdf)\, [Supplemental Document](https://www.seas.upenn.edu/~cffjiang/research/hot/supdoc.pdf)\, [Youtube](https://youtu.be/XTspQFY2phY)
+
+Authors:
 [Xinlei Wang](https://github.com/littlemine)\*, 
 [Minchen Li](https://www.seas.upenn.edu/~minchenl/)\*, 
 [Yu Fang](http://squarefk.com/), 
@@ -14,6 +17,9 @@ This is the opensource code for the paper:
 [Min Tang](https://min-tang.github.io/home/), 
 [Danny M. Kaufman](http://dannykaufman.io/), 
 [Chenfanfu Jiang](https://www.seas.upenn.edu/~cffjiang/)
+(* Equal contributions)
+
+We propose Hierarchical Optimization Time Integration (HOT) for efficient implicit timestepping of the material point method (MPM) irrespective of simulated materials and conditions. HOT is an MPM-specialized hierarchical optimization algorithm that solves nonlinear timestep problems for large-scale MPM systems near the CFL limit. HOT provides convergent simulations out of the box across widely varying materials and computational resolutions without parameter tuning. As an implicit MPM timestepper accelerated by a custom-designed Galerkin multigrid wrapped in a quasi-Newton solver, HOT is both highly parallelizable and robustly convergent. As we show in our analysis, HOT maintains consistent and efficient performance even as we grow stiffness, increase deformation, and vary materials over a wide range of finite strain, elastodynamic, and plastic examples. Through careful benchmark ablation studies, we compare the effectiveness of HOT against seemingly plausible alternative combinations of MPM with standard multigrid and other Newton-Krylov models. We show how these alternative designs result in severe issues and poor performance. In contrast, HOT outperforms existing state-of-the-art, heavily optimized implicit MPM codes with an up to 10× performance speedup across a wide range of challenging benchmark test simulations.
 
 <p float="left">
 <img src="Data/Clips/faceless.gif" height="128px"/>
