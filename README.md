@@ -91,22 +91,14 @@ Please see bash script *tog.sh* and *README* for more details.
 
 Please cite our paper if you use this code for your research: 
 ```
-@article{10.1145/3386760,
+@article{Wang2020HOT,
 author = {Wang, Xinlei and Li, Minchen and Fang, Yu and Zhang, Xinxin and Gao, Ming and Tang, Min and Kaufman, Danny M. and Jiang, Chenfanfu},
 title = {Hierarchical Optimization Time Integration for CFL-Rate MPM Stepping},
 year = {2020},
-issue_date = {April 2020},
-publisher = {Association for Computing Machinery},
-address = {New York, NY, USA},
 volume = {39},
 number = {3},
-issn = {0730-0301},
-url = {https://doi.org/10.1145/3386760},
-doi = {10.1145/3386760},
 journal = {ACM Trans. Graph.},
-month = apr,
 articleno = {Article 21},
-numpages = {16},
-keywords = {multigrid, optimization integrator, quasi-Newton, Material point method (MPM)}
+numpages = {16}
 }
 ```
