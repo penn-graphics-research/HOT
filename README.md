@@ -32,7 +32,7 @@ This is the opensource code for the paper:
 </p>
 
 ## Compilation
-The following instruction is tested on Ubuntu 18.04 LTS with g++7.4, on Ubuntu 19.10 with g++7.4. 
+The following instruction is tested on Ubuntu 18.04 LTS with g++7.4, on Ubuntu 19.10 with g++7.4, g++8.4, clang-9. 
 
 ### Dependencies
 
@@ -41,7 +41,7 @@ Run the command to install all dependencies:
 ```
 sudo apt-get install make cmake g++ libeigen3-dev gfortran libmetis-dev 
 sudo apt-get install libopenvdb-dev libboost-all-dev libilmbase-dev libopenexr-dev 
-sudo apt-get install libtbb2 libtbb-dev libz-dev clang-format-6.0 clang-format
+sudo apt-get install libtbb2 libtbb-dev libz-dev clang-format-6.0 clang-format libarpack2-dev
 pip install --upgrade cmake
 ```
 

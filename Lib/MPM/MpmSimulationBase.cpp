@@ -396,13 +396,12 @@ void MpmSimulationBase<T, dim>::performRpicVelocityFilteringAtBeginningOfTimeSte
         g.new_v = g.v;
     });
 
-    auto grid_array = grid.grid->Get_Array();
     auto* C = ((transfer_scheme == APIC_blend_RPIC) && interpolation_degree != 1)
         ? &particles.DataManager::get(C_name<TM>())
         : nullptr;
-    const bool USE_APIC_BLEND_RPIC = false;
-    const bool USE_MPM_DEGREE_ONE = false;
-    const bool USE_MLS_MPM = false;
+    static constexpr bool USE_APIC_BLEND_RPIC = false;
+    static constexpr bool USE_MPM_DEGREE_ONE = false;
+    static constexpr bool USE_MLS_MPM = false;
     {
         tbb::parallel_for(0, (int)particle_group.size(), [&](int group_idx) {
             for (int idx = particle_group[group_idx].first; idx <= particle_group[group_idx].second; ++idx) {
@@ -540,7 +539,6 @@ void MpmSimulationBase<T, dim>::particlesToGridWithForceHelper()
     auto& Xarray = particles.X.array;
     auto& Varray = particles.V.array;
     auto& marray = particles.mass.array;
-    auto grid_array = grid.grid->Get_Array();
     const StdVector<Matrix<T, dim, dim>>* Carray_pointer;
     Carray_pointer = ((transfer_scheme == APIC_blend_RPIC) && interpolation_degree != 1) ? (&(particles.DataManager::get(C_name<TM>()).array)) : NULL;
 
@@ -935,7 +933,6 @@ void MpmSimulationBase<T, dim>::gridToParticlesHelper(double dt)
 {
     std::atomic<bool> faster_than_grid_cell(false);
     std::atomic<bool> faster_than_half_grid_cell(false);
-    auto grid_array = grid.grid->Get_Array();
     auto* C = ((transfer_scheme == APIC_blend_RPIC) && interpolation_degree != 1)
         ? &particles.DataManager::get(C_name<TM>())
         : nullptr;

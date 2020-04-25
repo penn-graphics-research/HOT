@@ -98,7 +98,7 @@ public:
     {
     }
 
-    void initialize()
+    void initialize() override
     {
         Base::initialize();
         if (!Base::symplectic) {
@@ -164,7 +164,7 @@ public:
         return 0;
     }
 
-    void startBackwardEuler()
+    void startBackwardEuler() override
     {
         Base::buildMassMatrix();
         objective.setPreconditioner([&](const TVStack& in, TVStack& out) {
@@ -185,7 +185,7 @@ public:
         objective.reinitialize(); // Reinitialize matrix sparsity pattern
     }
 
-    void backwardEulerStep()
+    void backwardEulerStep() override
     {
         ZIRAN_TIMER();
         startBackwardEuler();
@@ -232,7 +232,7 @@ public:
         Base::constructNewVelocityFromNewtonResult();
     }
 
-    virtual void advanceOneTimeStep(double dt)
+    virtual void advanceOneTimeStep(double dt) override
     {
         ZIRAN_TIMER();
         ZIRAN_INFO("Advance one time step from time ", std::setw(7), Base::step.time, " with                     dt = ", dt);

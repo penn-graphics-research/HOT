@@ -108,7 +108,6 @@ void MpmForceBase<T, dim>::rasterizeForceToTVStack(const T scale, TVStack& force
     });
 
     auto& Xarray = particles.X.array;
-    auto grid_array = grid.grid->Get_Array();
 
     {
         for (uint64_t color = 0; color < (1 << dim); ++color) {
